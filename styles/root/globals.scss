@@ -1,0 +1,59 @@
+@import "./fonts.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  color: #000000;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #0afffde5;
+  border-radius: 1px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1621;
+}
+::selection {
+  background: #0afffde5;
+  color: #0f1621;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#__next {
+  overflow-x: hidden;
+  @include box(100vw, auto);
+  min-height: 100vh;
+  background-color: #ffffff;
+  @include make-flex($just: flex-start);
+
+  @include respondAt(915px) {
+    width: 100vw;
+  }
+}

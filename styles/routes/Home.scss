@@ -1,0 +1,4 @@
+.HomeContainer {
+  @include box();
+  @include make-flex();
+}
