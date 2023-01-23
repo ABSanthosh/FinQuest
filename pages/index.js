@@ -10,7 +10,6 @@ export default function Home() {
     setData(json);
   };
 
-  
   // Uncomment this to fetch data every second(Make shift live update)
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -22,13 +21,7 @@ export default function Home() {
 
   return (
     <main className="HomeContainer">
-      <button
-        onClick={async () => {
-          fetchData();
-        }}
-      >
-        Fetch
-      </button>
+      <button onClick={async () => fetchData()}>Fetch</button>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </main>
   );
