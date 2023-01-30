@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
-  color: #000000;
+  color: #fff;
 }
 
 ::-webkit-scrollbar {
@@ -50,7 +50,7 @@ body,
   overflow-x: hidden;
   @include box(100vw, auto);
   min-height: 100vh;
-  background-color: #ffffff;
+  background-color: #0e0e0e;
   @include make-flex($just: flex-start);
 
   @include respondAt(915px) {

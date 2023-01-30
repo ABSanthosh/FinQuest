@@ -1,0 +1,83 @@
+.FancyButton {
+  @include box(auto, 40px);
+  @include make-flex();
+  padding: 0 20px;
+  border: 1px solid transparent;
+  background-color: #15222c;
+  color: white;
+  border-radius: 5px;
+  font-size: 17px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+  &:disabled {
+    background-color: #9e9e9e;
+    color: #e0e0e0;
+    border: 1px solid #9e9e9e;
+    cursor: not-allowed;
+    [data-icon] {
+      color: #e0e0e0;
+    }
+
+    &:hover {
+      background-color: #9e9e9e;
+      color: #e0e0e0;
+      border: 1px solid #9e9e9e;
+      [data-icon] {
+        color: #e0e0e0;
+      }
+    }
+  }
+
+  &--hover {
+    &:hover {
+      color: #15222c;
+      background-color: white;
+      border: 1px solid #15222c;
+      [data-icon] {
+        color: #15222c;
+      }
+    }
+  }
+}
+.FancyButton__inverted {
+  @include box(auto, 40px);
+  @include make-flex();
+  padding: 0 20px;
+  border: 1px solid #15222c;
+  border-radius: 5px;
+  font-size: 17px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+  background-color: white;
+  color: #15222c;
+  border: 1px solid #15222c;
+
+  [data-icon] {
+    color: #15222c;
+  }
+
+  &:disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+    border: 1px solid #9e9e9e;
+    cursor: not-allowed;
+    [data-icon] {
+      color: #9e9e9e;
+    }
+  }
+
+  &--hover {
+    &:hover {
+      color: white;
+      background-color: #15222c;
+      border: 1px solid transparent;
+      [data-icon] {
+        color: white;
+      }
+    }
+  }
+}

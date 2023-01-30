@@ -1,0 +1,79 @@
+.HeaderWrapper {
+  @include box(100vw, 90px);
+  @include make-flex();
+  padding: 20px 20px;
+  // position: fixed;
+  top: 0;
+  z-index: 10;
+  padding: 0 20px;
+  transition: height 0.3s ease-in-out;
+}
+
+.Header {
+  @include box();
+  max-width: 1152px;
+  @include make-flex($dir: row, $just: space-between);
+
+  &__menu {
+    // background-color: white;
+    list-style: none;
+    @include box(50%, 40px);
+    border-radius: 40px;
+    // border: 1.5px solid;
+    @include make-flex($dir: row, $just: space-around, $align: center);
+    gap: 10px;
+
+    &--item {
+      color: #cfcece;
+    }
+
+    &--activeItem {
+      color: rgb(15, 15, 15);
+    }
+
+    &--item,
+    &--activeItem {
+      @include box(auto);
+      @include make-flex($dir: row, $align: center);
+      gap: 10px;
+      flex-grow: 1;
+
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      
+      a {
+        padding-top: 10px;
+        font-family: "Poppins", sans-serif;
+        @include box();
+        font-weight: 400;
+        @include make-flex();
+        font-size: 20px;
+        &:hover {
+          color: rgb(98, 98, 98);
+        }
+      }
+    }
+  }
+
+  &__actions {
+    @include box(auto);
+    @include make-flex($dir: row);
+    gap: 10px;
+
+    &--button {
+      outline: none;
+      border: 1.5px solid;
+      background-color: white;
+      @include box(40px, 40px);
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 20px;
+      @include make-flex();
+
+      &:hover {
+        background-color: #f6b0ff;
+      }
+    }
+  }
+}
