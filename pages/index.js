@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "../styles/routes/Home.scss";
 import Header from "../component/Header/Header";
 import { Cashify } from "../Utils/Cashify";
+import Logo from "../component/Logo/Logo";
 
 export default function Home() {
   const [stockItems, setStockItems] = useState([
@@ -67,29 +68,47 @@ export default function Home() {
     },
   ]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const updatedStockItems = stockItems.map((item) => {
-        const delta = Math.random() > 0.5 ? 1 : -1;
-        const cost = item.cost + delta * Math.floor(Math.random() * 1000);
-        return {
-          ...item,
-          cost,
-          delta,
-        };
-      });
-      setStockItems(updatedStockItems);
-    }, 1000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     const updatedStockItems = stockItems.map((item) => {
+  //       const delta = Math.random() > 0.5 ? 1 : -1;
+  //       const cost = item.cost + delta * Math.floor(Math.random() * 1000);
+  //       return {
+  //         ...item,
+  //         cost,
+  //         delta,
+  //       };
+  //     });
+  //     setStockItems(updatedStockItems);
+  //   }, 1000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <main className="HomeContainer">
-      <Header />
+      {/* <Header /> */}
       <section className="HeroSection">
+        <div className="HeroSection--subHeader">
+          <img src="/Img/Logo.svg" />
+          <span>x</span>
+          <img src="/Img/Inspira.svg" />
+        </div>
         <div className="HeroSection--title">
-          <img src="/Img/Title.svg" />
+          <div>
+            <img src="/Img/Title.svg" />
+            <img src="/Img/Title.svg" />
+          </div>
+          <div>
+            <img src="/Img/Title.svg" />
+            <img src="/Img/Title.svg" />
+            <img src="/Img/Title.svg" />
+            <img src="/Img/Title.svg" />
+          </div>
+          <div>
+            <img src="/Img/Title.svg" />
+            <img src="/Img/Title.svg" />
+          </div>
         </div>
         <div className="HeroSection__content">
           {stockItems.map((item, index) => (
