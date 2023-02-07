@@ -1,5 +1,5 @@
 export default async (req, res) => {
-  const spreadsheetId = "1SvyMyOn0r3SuKh9HLY8qodZ9w12qamf3JB9CI5UAqpQ";
+  const spreadsheetId = "1DcdmtC__TYq1uRyW05DssFL_u46JkoSr983p-UMy6_U";
   const response = await fetch(
     `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:json`
   );
