@@ -114,8 +114,8 @@ export default function Home() {
       <section className="HeroSection">
         <div className="HeroSection--subHeader">
           <img src="/Img/Logo.svg" />
-          <span>x</span>
-          <img src="/Img/Inspira.svg" />
+          {/* <span>x</span>
+          <img src="/Img/Inspira.svg" /> */}
         </div>
         <div className="HeroSection--title">
           <div>
@@ -134,18 +134,27 @@ export default function Home() {
           </div>
         </div>
         <div className="HeroSection__content">
-          {stockItems.map((item, index) => (
-            <div className="HeroSection__content--item" key={index}>
-              <label>{item.Name}</label>
-              <span
-                className={`HeroSection__content--${
-                  item.Delta === 1 ? "green" : "red"
-                }`}
-              >
-                {Cashify(item.Price)}
-              </span>
-            </div>
-          ))}
+          {stockItems.map((item, index) => {
+            // if (
+            //   item.Name === "C Block Printer" ||
+            //   item.Name === "Swad Kathi" ||
+            //   item.Name === "Mahesh"
+            // )
+            //   return;
+
+            return (
+              <div className="HeroSection__content--item" key={index}>
+                <label>{item.Name}</label>
+                <span
+                  className={`HeroSection__content--${
+                    item.Delta === 1 ? "green" : "red"
+                  }`}
+                >
+                  {Cashify(item.Price)}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </section>
     </main>
