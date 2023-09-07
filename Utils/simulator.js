@@ -1,5 +1,5 @@
 var count = 15;
-var team_count = 3;
+var team_count = 70;
 var frequency = [];
 for (let i = 0; i < count; i++) {
   var x = new Map();
@@ -32,7 +32,7 @@ var goods = [
   "Swad Kathi",
   "Mahesh",
 ];
-var prices_old = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+var prices_old = [120, 80, 130, 100, 80, 120, 80, 80, 90, 110, , 70, 130, 100, 80];
 var transactions_old = [];
 for (let i = 0; i < team_count; i++) {
   transactions_old.push(
@@ -83,6 +83,7 @@ function recalculate(k) {
 function get_price(k) {
   var rnum = Math.random();
   var size = cumulative[k].length;
+
   if (size == 0) {
     return 0;
   }
@@ -143,6 +144,7 @@ export default function Simulate(data) {
   var prices_new = [];
   for (let i = 0; i < count; i++) {
     var p = get_price(i);
+    // console.log(p);
     var dict = {};
     dict["Name"] = goods[i];
     dict["Price"] = p;
