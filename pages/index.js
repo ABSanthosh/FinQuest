@@ -9,12 +9,12 @@ export default function Home() {
   const [stockItems, setStockItems] = useState([
     {
       Name: "Anna Cafe",
-      Price: 400,
+      Price: 0,
       Delta: 1,
     },
     {
       Name: "Nescafe",
-      Price: 105,
+      Price: 0,
       Delta: 1,
     },
     {
@@ -89,7 +89,7 @@ export default function Home() {
     const response = await fetch("/api/fetch-data");
     const json = await response.json();
     // return Simulate(json)
-    // console.log(Simulate(json).prices_new);
+    console.log(Simulate(json).prices_new);
     setStockItems((prev) => {
       return Simulate(json).prices_new.map((item, index) => {
         return {
