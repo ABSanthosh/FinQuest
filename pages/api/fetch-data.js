@@ -8,8 +8,6 @@ export default async (req, res) => {
     /.*google.visualization.Query.setResponse\({(.*?)}\);?/s,
     "{$1}"
   );
-  console.log(result);
-  // const json = result;
   const json = JSON.parse(
     result.replace(
       /.*google.visualization.Query.setResponse\({(.*?)}\);?/s,
@@ -20,7 +18,6 @@ export default async (req, res) => {
   const headings = json.table.cols.map((item) => item.label);
 
   let data = json.table.rows.map((item) => {
-    // console.log(item);
     let row = {};
     item.c.forEach((cell, idx) => {
       row[headings[idx]] = cell?.v ?? null;

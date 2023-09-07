@@ -10,79 +10,78 @@ export default function Home() {
     {
       Name: "Anna Cafe",
       Price: 400,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "Nescafe",
       Price: 105,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "Laundry",
       Price: 0,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "Grabbo",
       Price: 0,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "Naveen Tea",
       Price: 0,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "Surya Tuck",
       Price: 0,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "Adarsh",
       Price: 0,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "Cycle Shop",
       Price: 0,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "Bookstore",
       Price: 0,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "19th Hole",
       Price: 0,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "Raju Cab",
       Price: 0,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "Pharmacy",
       Price: 0,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "C Block Printer",
       Price: 0,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "Swad Kathi",
       Price: 0,
-      Delta: 1
+      Delta: 1,
     },
     {
       Name: "Mahesh",
       Price: 0,
-      Delta: 1
-    }
-
+      Delta: 1,
+    },
   ]);
 
   // const [stockItems, setStockItems] = useState([])
@@ -90,20 +89,20 @@ export default function Home() {
     const response = await fetch("/api/fetch-data");
     const json = await response.json();
     // return Simulate(json)
-    console.log(Simulate(json).prices_new)
+    // console.log(Simulate(json).prices_new);
     setStockItems((prev) => {
       return Simulate(json).prices_new.map((item, index) => {
-        return ({
+        return {
           ...item,
-          Delta: prev[index].Price <= item.Price ? 1 : -1
-        })
-      })
+          Delta: prev[index].Price <= item.Price ? 1 : -1,
+        };
+      });
     });
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      fetchData()
+      fetchData();
     }, 1000);
 
     return () => clearInterval(interval);
@@ -139,8 +138,9 @@ export default function Home() {
             <div className="HeroSection__content--item" key={index}>
               <label>{item.Name}</label>
               <span
-                className={`HeroSection__content--${item.Delta === 1 ? "green" : "red"
-                  }`}
+                className={`HeroSection__content--${
+                  item.Delta === 1 ? "green" : "red"
+                }`}
               >
                 {Cashify(item.Price)}
               </span>
